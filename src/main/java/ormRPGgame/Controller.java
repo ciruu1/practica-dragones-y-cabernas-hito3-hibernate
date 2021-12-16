@@ -44,11 +44,11 @@ public class Controller {
      */
     public Daga createDaga(String nombre) throws SQLException{
         // @TODO complete este metodo para crear de forma presistente una daga
-
+        return new Daga(nombre);
     }
 
-    public Mago createMago(String magician, Daga daga) throws SQLException {
+    public Mago createMago(int id_m, int mana, int fuerza, String nombre_p, Daga daga) throws SQLException {
         // @TODO complete este metodo para crear de forma presistente un mago
-
+        return new Mago(id_m, mana, fuerza, nombre_p, daga);
     }
 }

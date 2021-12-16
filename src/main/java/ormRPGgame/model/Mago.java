@@ -9,12 +9,38 @@ import java.util.Set;
 public class Mago {
     // @TODO completar las anotaciones de todos los atributos
 
+    private int id_m;
+    private int mana;
+    private int fuerza;
+    private String nombre_p;
+    private Daga daga;
 
-    public Mago(String nombre, Daga daga){
-        // @TODO completar el constructor de la clase.
-        //  Para ello es necesario un string con el nombre del mago y un objeto de la clase daga
-        //  Inicialice el resto de atributos a los valores que considere oportunos
+    public Mago(int id_m, int mana, int fuerza, String nombre_p, Daga daga) {
+        this.id_m = id_m;
+        this.mana = mana;
+        this.fuerza = fuerza;
+        this.nombre_p = nombre_p;
+        this.daga = daga;
     }
 
-    public String getnombre(){ return this.name;}
+    public int getId_m() {
+        return id_m;
+    }
+
+    public int getMana() {
+        return mana;
+    }
+
+    public int getFuerza() {
+        return fuerza;
+    }
+
+    public String getNombre_p() {
+        return nombre_p;
+    }
+
+    public Daga getDaga() {
+        return daga;
+    }
+
 }
