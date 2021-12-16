@@ -1,8 +1,18 @@
 package ormRPGgame.model;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "forja")
 public class Forja {
+    @Id
+    @Column(name = "nombre_f", nullable = false)
     private String nombre_f;
+    
+    @Column(name = "owner", nullable = false)
     private String owner; // Dueño
+    
+    @Column(name = "nombre_c", nullable = false)
     private String nombre_c;
 
     public Forja(String nombre_f, String owner, String nombre_c) {
