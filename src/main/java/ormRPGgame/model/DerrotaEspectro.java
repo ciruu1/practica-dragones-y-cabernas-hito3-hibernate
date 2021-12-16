@@ -24,4 +24,5 @@ public class DerrotaEspectro {
     public int getCodigo_e() {
         return codigo_e;
     }
+    
 }
