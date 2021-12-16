@@ -1,16 +1,37 @@
 package ormRPGgame.model;
 
+import javax.persistence.*;
 import java.util.Date;
 
+@Entity
+@Table(name = "personaje")
 public class Personaje {
+    @Id
+    @Column(name = "nombre_p", nullable = false)
     private String nombre_p;
+    
+    @Column(name = "nivel", nullable = false)
     private int nivel;
+    
+    @Column(name = "peso", nullable = false)
     private int peso;
+    
+    @Column(name = "apariencia", nullable = false)
     private String apariencia;
+    
+    @Column(name = "oroacumulado", nullable = false)
     private int oroacumulado;
+    
+    @Column(name = "nombre_d", nullable = false)
     private String nombre_d;
+    
+    @Column(name = "nombre_j", nullable = false)
     private String nombre_j;
+    
+    @Column(name = "vida", nullable = false)
     private int vida;
+    
+    @Column(name = "ultima_conexion", nullable = false)
     private Date ultima_conexion;
 
     public Personaje(String nombre_p, int nivel, int peso, String apariencia, int oroacumulado, String nombre_d, String nombre_j, int vida, Date ultima_conexion) {
