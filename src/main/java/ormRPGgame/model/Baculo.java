@@ -1,10 +1,18 @@
 package ormRPGgame.model;
-@Entity @Table(name = "baculo")
+
+import javax.persistence.*;
+
+@Entity
+@Table(name = "baculo")
 public class Baculo {
-    @nombre_b
-    @Column(name = "nombre_b")
+    @Id
+    @Column(name = "nombre_b", nullable = false)
     private String nombre_b;
+
+    @Column(name = "peso", nullable = false)
     private int peso;
+
+    @Column(name = "daño", nullable = false)
     private int damage;
 
     public Baculo(String nombre_b, int peso, int damage) {

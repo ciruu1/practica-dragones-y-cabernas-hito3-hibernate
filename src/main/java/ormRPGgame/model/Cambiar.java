@@ -1,8 +1,20 @@
 package ormRPGgame.model;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "cambiar")
 public class Cambiar {
+    @Id
+    @GeneratedValue
+    @Column(name = "id")
+    private Long id;
+
+    @Column(name = "nombre_t", nullable = false)
     private String nombre_t;
+    @Column(name = "nombre_p", nullable = false)
     private String nombre_p;
+    @Column(name = "nombre_d", nullable = false)
     private String nombre_d;
 
     public Cambiar(String nombre_t, String nombre_p, String nombre_d) {
