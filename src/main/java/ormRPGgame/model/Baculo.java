@@ -1,7 +1,7 @@
 package ormRPGgame.model;
 
 public class Baculo {
-    private String nombre_b;m
+    private String nombre_b;miguel
     private int peso;
     private int damage;
 
