@@ -1,6 +1,12 @@
 package ormRPGgame.model;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "NPC")
 public class NPC {
+    @Id
+    @Column(name = "nombre_npc", nullable = false)
     private String nombre_npc;
 
     public NPC(String nombre_npc) {
