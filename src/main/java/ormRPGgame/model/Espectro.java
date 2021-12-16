@@ -1,9 +1,21 @@
 package ormRPGgame.model;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "espectro")
 public class Espectro {
+    @Id
+    @Column(name = "codigo_e", nullable = false)
     private int codigo_e;
+    
+    @Column(name = "nombre", nullable = false)
     private String nombre;
+    
+    @Column(name = "vida", nullable = false)
     private int vida;
+    
+    @Column(name = "recompensa", nullable = false)
     private int recompensa;
 
     public Espectro(int codigo_e, String nombre, int vida, int recompensa) {
