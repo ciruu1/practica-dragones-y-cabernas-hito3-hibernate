@@ -1,8 +1,18 @@
 package ormRPGgame.model;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "pocion")
 public class Pocion {
+    @Id
+    @Column(name = "codigo_po", nullable = false)
     private int codigo_po;
+    
+    @Column(name = "mana", nullable = false)
     private int mana;
+    
+    @Column(name = "vida", nullable = false)
     private int vida;
 
     public Pocion(int codigo_po, int mana, int vida) {
