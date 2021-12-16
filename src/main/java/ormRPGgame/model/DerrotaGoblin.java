@@ -6,10 +6,10 @@ import javax.persistence.*;
 @Table(name = "derrotaGoblin")
 public class DerrotaGoblin {
     @Id
-    @Column(name = id_g, nullable = false)
+    @Column(name = "id_g", nullable = false)
     private int id_g;
     
-    @Column(name = codigo_g, nullable = false)
+    @Column(name = "codigo_g", nullable = false)
     private int codigo_g;
 
     public DerrotaGoblin(int id_g, int codigo_g) {
