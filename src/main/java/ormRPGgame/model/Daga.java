@@ -1,16 +1,14 @@
 package ormRPGgame.model;
 
-import javax.persistence.*;
-import java.util.HashSet;
-import java.util.Set;
-
 // @TODO completar las anotaciones de la clase
 public class Daga {
-    // @TODO completar las anotaciones de todos los atributos
+    private String nombre_d;
 
-    public Daga(String nombre){
-        // @TODO completar el constructor de la clase.
+    public Daga(String nombre_d) {
+        this.nombre_d = nombre_d;
     }
 
-    public String getnombre(){ return this.name;}
+    public String getNombre_d() {
+        return nombre_d;
+    }
 }
