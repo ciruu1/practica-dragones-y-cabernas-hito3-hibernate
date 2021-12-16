@@ -24,4 +24,5 @@ public class HabilidadGuerrero {
     public String getDescripcion() {
         return descripcion;
     }
+    
 }
