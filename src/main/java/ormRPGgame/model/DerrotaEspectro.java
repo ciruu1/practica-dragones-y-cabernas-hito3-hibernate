@@ -1,11 +1,6 @@
 package ormRPGgame.model;
 
-import javax.persistence. * ;
-
-@Entity
-@Table ( name = " baculo " )
 public class DerrotaEspectro {
-    @ID
     private int id_m;
     private int codigo_e;
 
