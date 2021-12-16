@@ -5,14 +5,25 @@ import java.util.HashSet;
 import java.util.Set;
 
 // @TODO completar las anotaciones de la clase
-
+@Entity
+@Table(name = "mago")
 public class Mago {
     // @TODO completar las anotaciones de todos los atributos
 
+    @Id
+    @Column(name = "id_m", nullable = false)
     private int id_m;
+    
+    @Column(name = "mana", nullable = false)
     private int mana;
+    
+    @Column(name = "fuerza", nullable = false)
     private int fuerza;
+    
+    @Column(name = "nombre_p", nullable = false)
     private String nombre_p;
+    
+    @Column(name = "daga", nullable = false)
     private Daga daga;
 
     public Mago(int id_m, int mana, int fuerza, String nombre_p, Daga daga) {
