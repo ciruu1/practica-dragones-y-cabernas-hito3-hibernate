@@ -1,7 +1,15 @@
 package ormRPGgame.model;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "perteneceT")
 public class PerteneceT {
+    @Id
+    @Column(name = "nombre_esc", nullable = false)
     private String nombre_esc;
+    
+    @Column(name = "id_t", nullable = false)
     private int id_t;
 
     public PerteneceT(String nombre_esc, int id_t) {
