@@ -44,6 +44,7 @@
         <mapping class="ormRPGgame.model.HabilidadGuerrero"/>
         <mapping class="ormRPGgame.model.HabilidadMago"/>
         <mapping class="ormRPGgame.model.HabilidadTanque"/>
+        <mapping class="ormRPGgame.model.Hacha"/>
         <mapping class="ormRPGgame.model.Jugador"/>
         <mapping class="ormRPGgame.model.Lucha"/>
         <mapping class="ormRPGgame.model.Mago"/>
