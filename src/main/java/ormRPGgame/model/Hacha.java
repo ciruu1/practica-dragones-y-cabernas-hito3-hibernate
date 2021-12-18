@@ -12,7 +12,7 @@ public class Hacha {
     @Column(name = "peso", nullable = false)
     private int peso;
     
-    @Column(name = "damage", nullable = false)
+    @Column(name = "daño", nullable = false)
     private int damage; // Daño
 
     public Hacha(String nombre_h, int peso, int damage) {

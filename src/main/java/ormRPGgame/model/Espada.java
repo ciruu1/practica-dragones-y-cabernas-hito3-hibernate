@@ -12,7 +12,7 @@ public class Espada {
     @Column(name = "peso", nullable = false)
     private int peso;
     
-    @Column(name = "damage", nullable = false)
+    @Column(name = "daño", nullable = false)
     private int damage; // Daño
 
     public Espada(String nombre_e, int peso, int damage) {

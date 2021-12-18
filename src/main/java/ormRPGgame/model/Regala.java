@@ -19,7 +19,7 @@ public class Regala {
     private Personaje nombre_p;
 
     @ManyToOne
-    @JoinColumn(name = "nombre_po")
+    @JoinColumn(name = "codigo_po")
     private Pocion codigo_po;
 
     @ManyToOne

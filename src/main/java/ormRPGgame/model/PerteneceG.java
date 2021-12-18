@@ -3,7 +3,7 @@ package ormRPGgame.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "perteneceG")
+@Table(name = "pertenece_g")
 public class PerteneceG {
     @Id
     @GeneratedValue

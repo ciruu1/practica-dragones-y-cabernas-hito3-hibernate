@@ -3,7 +3,7 @@ package ormRPGgame.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "poseeEsc")
+@Table(name = "posee_esc")
 public class PoseeEsc {
     @Id
     @GeneratedValue

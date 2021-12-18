@@ -3,7 +3,7 @@ package ormRPGgame.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "habilidadMago")
+@Table(name = "habilidad_mago")
 public class HabilidadMago {
     @Id
     @Column(name = "nombre_hm", nullable = false)

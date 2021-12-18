@@ -9,7 +9,7 @@ public class Forja {
     @Column(name = "nombre_f", nullable = false)
     private String nombre_f;
     
-    @Column(name = "owner", nullable = false)
+    @Column(name = "dueño", nullable = false)
     private String owner; // Dueño
 
     @ManyToOne
