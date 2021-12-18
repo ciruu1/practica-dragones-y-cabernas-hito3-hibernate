@@ -6,22 +6,40 @@ import javax.persistence.*;
 @Table(name = "perteneceT")
 public class PerteneceT {
     @Id
-    @Column(name = "nombre_esc", nullable = false)
-    private String nombre_esc;
-    
-    @Column(name = "id_t", nullable = false)
-    private int id_t;
+    @GeneratedValue
+    @Column(name = "id")
+    private Long id;
 
-    public PerteneceT(String nombre_esc, int id_t) {
+    @ManyToOne
+    @JoinColumn(name = "nombre_esc")
+    private Escuadron nombre_esc;
+
+    @ManyToOne
+    @JoinColumn(name = "id_t")
+    private Tanque id_t;
+
+    public PerteneceT(Escuadron nombre_esc, Tanque id_t) {
         this.nombre_esc = nombre_esc;
         this.id_t = id_t;
     }
 
-    public String getNombre_esc() {
+    public PerteneceT() {
+
+    }
+
+    public Escuadron getNombre_esc() {
         return nombre_esc;
     }
 
-    public int getId_t() {
+    public Tanque getId_t() {
         return id_t;
+    }
+
+    public void setNombre_esc(Escuadron nombre_esc) {
+        this.nombre_esc = nombre_esc;
+    }
+
+    public void setId_t(Tanque id_t) {
+        this.id_t = id_t;
     }
 }

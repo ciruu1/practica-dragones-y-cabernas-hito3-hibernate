@@ -6,7 +6,7 @@ import javax.persistence.*;
 @Table(name = "dragon")
 public class Dragon {
     @Id
-    @Column(name = "nombre_dr", nullable = false)
+    @Column(name = "nombre_dr", nullable = false, unique = true)
     private String nombre_dr;
     
     @Column(name = "vida", nullable = false)
@@ -21,6 +21,10 @@ public class Dragon {
         this.recompensa = recompensa;
     }
 
+    public Dragon() {
+
+    }
+
     public String getNombre_dr() {
         return nombre_dr;
     }
@@ -31,5 +35,17 @@ public class Dragon {
 
     public int getRecompensa() {
         return recompensa;
+    }
+
+    public void setNombre_dr(String nombre_dr) {
+        this.nombre_dr = nombre_dr;
+    }
+
+    public void setVida(int vida) {
+        this.vida = vida;
+    }
+
+    public void setRecompensa(int recompensa) {
+        this.recompensa = recompensa;
     }
 }

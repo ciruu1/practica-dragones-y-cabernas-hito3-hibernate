@@ -9,14 +9,22 @@ import javax.persistence.Table;
 @Table(name = "ciudad")
 public class Ciudad {
     @Id
-    @Column(name = "nombre_c", nullable = false)
+    @Column(name = "nombre_c", nullable = false, unique = true)
     private String nombre_c;
 
     public Ciudad(String nombre_c) {
         this.nombre_c = nombre_c;
     }
 
+    public Ciudad() {
+
+    }
+
     public String getNombre_c() {
         return nombre_c;
+    }
+
+    public void setNombre_c(String nombre_c) {
+        this.nombre_c = nombre_c;
     }
 }

@@ -1,5 +1,6 @@
 package ormRPGgame;
 
+import ormRPGgame.model.Jugador;
 import ormRPGgame.model.Mago;
 import ormRPGgame.model.Daga;
 
@@ -8,8 +9,10 @@ import org.hibernate.SessionFactory;
 import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
+import ormRPGgame.model.Personaje;
 
 import java.sql.*;
+import java.util.Date;
 
 
 /**
@@ -44,11 +47,35 @@ public class Controller {
      */
     public Daga createDaga(String nombre) throws SQLException{
         // @TODO complete este metodo para crear de forma presistente una daga
-        return new Daga(nombre);
+        session.beginTransaction();
+        Daga daga = new Daga(nombre);
+        session.save(daga);
+        session.getTransaction().commit();
+        return daga;
     }
 
-    public Mago createMago(int id_m, int mana, int fuerza, String nombre_p, Daga daga) throws SQLException {
+    public Mago createMago(int id_m, int mana, int fuerza, Personaje nombre_p) throws SQLException {
         // @TODO complete este metodo para crear de forma presistente un mago
-        return new Mago(id_m, mana, fuerza, nombre_p, daga);
+        session.beginTransaction();
+        Mago mago = new Mago(id_m, mana, fuerza, nombre_p);
+        session.save(mago);
+        session.getTransaction().commit();
+        return mago;
+    }
+
+    public Jugador createJugador(String nombre_j) {
+        session.beginTransaction();
+        Jugador jugador = new Jugador(nombre_j);
+        session.save(jugador);
+        session.getTransaction().commit();
+        return jugador;
+    }
+
+    public Personaje createPersonaje(String nombre_p, int nivel, int peso, String apariencia, int oroacumulado, Daga nombre_d, Jugador nombre_j, int vida, Date ultima_conexion) {
+        session.beginTransaction();
+        Personaje personaje = new Personaje(nombre_p, nivel, peso, apariencia, oroacumulado, nombre_d, nombre_j, vida, ultima_conexion);
+        session.save(personaje);
+        session.getTransaction().commit();
+        return personaje;
     }
 }

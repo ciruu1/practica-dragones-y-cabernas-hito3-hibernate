@@ -25,6 +25,10 @@ public class Espectro {
         this.recompensa = recompensa;
     }
 
+    public Espectro() {
+
+    }
+
     public int getCodigo_e() {
         return codigo_e;
     }
@@ -39,5 +43,21 @@ public class Espectro {
 
     public int getRecompensa() {
         return recompensa;
+    }
+
+    public void setCodigo_e(int codigo_e) {
+        this.codigo_e = codigo_e;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setVida(int vida) {
+        this.vida = vida;
+    }
+
+    public void setRecompensa(int recompensa) {
+        this.recompensa = recompensa;
     }
 }

@@ -21,6 +21,10 @@ public class Espada {
         this.damage = damage;
     }
 
+    public Espada() {
+
+    }
+
     public String getNombre_e() {
         return nombre_e;
     }
@@ -31,5 +35,17 @@ public class Espada {
 
     public int getDamage() {
         return damage;
+    }
+
+    public void setNombre_e(String nombre_e) {
+        this.nombre_e = nombre_e;
+    }
+
+    public void setPeso(int peso) {
+        this.peso = peso;
+    }
+
+    public void setDamage(int damage) {
+        this.damage = damage;
     }
 }

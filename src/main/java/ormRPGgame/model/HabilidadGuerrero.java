@@ -17,6 +17,10 @@ public class HabilidadGuerrero {
         this.descripcion = descripcion;
     }
 
+    public HabilidadGuerrero() {
+
+    }
+
     public String getNombre_hg() {
         return nombre_hg;
     }
@@ -24,5 +28,12 @@ public class HabilidadGuerrero {
     public String getDescripcion() {
         return descripcion;
     }
-    
+
+    public void setNombre_hg(String nombre_hg) {
+        this.nombre_hg = nombre_hg;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
 }

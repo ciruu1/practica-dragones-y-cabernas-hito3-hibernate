@@ -13,7 +13,15 @@ public class NPC {
         this.nombre_npc = nombre_npc;
     }
 
+    public NPC() {
+
+    }
+
     public String getNombre_npc() {
         return nombre_npc;
+    }
+
+    public void setNombre_npc(String nombre_npc) {
+        this.nombre_npc = nombre_npc;
     }
 }

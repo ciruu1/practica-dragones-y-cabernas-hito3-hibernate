@@ -6,30 +6,53 @@ import javax.persistence.*;
 @Table(name = "mejoraEspada")
 public class MejoraEspada {
     @Id
-    @Column(name = "nombre_f", nullable = false)
-    private String nombre_f;
-    
-    @Column(name = "nombre_e", nullable = false)
-    private String nombre_e;
-    
-    @Column(name = "nombre_p", nullable = false)
-    private String nombre_p;
+    @GeneratedValue
+    @Column(name = "id")
+    private Long id;
 
-    public MejoraEspada(String nombre_f, String nombre_e, String nombre_p) {
+    @ManyToOne
+    @JoinColumn(name = "nombre_f")
+    private Forja nombre_f;
+
+    @ManyToOne
+    @JoinColumn(name = "nombre_e")
+    private Espada nombre_e;
+
+    @ManyToOne
+    @JoinColumn(name = "nombre_p")
+    private Personaje nombre_p;
+
+    public MejoraEspada(Forja nombre_f, Espada nombre_e, Personaje nombre_p) {
         this.nombre_f = nombre_f;
         this.nombre_e = nombre_e;
         this.nombre_p = nombre_p;
     }
 
-    public String getNombre_f() {
+    public MejoraEspada() {
+
+    }
+
+    public Forja getNombre_f() {
         return nombre_f;
     }
 
-    public String getNombre_e() {
+    public Espada getNombre_e() {
         return nombre_e;
     }
 
-    public String getNombre_p() {
+    public Personaje getNombre_p() {
         return nombre_p;
+    }
+
+    public void setNombre_f(Forja nombre_f) {
+        this.nombre_f = nombre_f;
+    }
+
+    public void setNombre_e(Espada nombre_e) {
+        this.nombre_e = nombre_e;
+    }
+
+    public void setNombre_p(Personaje nombre_p) {
+        this.nombre_p = nombre_p;
     }
 }

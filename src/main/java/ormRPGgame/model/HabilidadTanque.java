@@ -17,11 +17,23 @@ public class HabilidadTanque {
         this.descripcion = descripcion;
     }
 
+    public HabilidadTanque() {
+
+    }
+
     public String getNombre_ht() {
         return nombre_ht;
     }
 
     public String getDescripcion() {
         return descripcion;
+    }
+
+    public void setNombre_ht(String nombre_ht) {
+        this.nombre_ht = nombre_ht;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
 }

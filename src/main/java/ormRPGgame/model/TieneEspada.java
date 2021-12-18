@@ -6,22 +6,40 @@ import javax.persistence.*;
 @Table(name = "tieneEspada")
 public class TieneEspada {
     @Id
-    @Column(name = "id_g", nullable = false)
-    private int id_g;
-    
-    @Column(name = "nombre_e", nullable = false)
-    private String nombre_e;
+    @GeneratedValue
+    @Column(name = "id")
+    private Long id;
 
-    public TieneEspada(int id_g, String nombre_e) {
+    @ManyToOne
+    @JoinColumn(name = "id_g")
+    private Guerrero id_g;
+
+    @ManyToOne
+    @JoinColumn(name = "nombre_e")
+    private Espada nombre_e;
+
+    public TieneEspada(Guerrero id_g, Espada nombre_e) {
         this.id_g = id_g;
         this.nombre_e = nombre_e;
     }
 
-    public int getId_g() {
+    public TieneEspada() {
+
+    }
+
+    public Guerrero getId_g() {
         return id_g;
     }
 
-    public String getNombre_e() {
+    public Espada getNombre_e() {
         return nombre_e;
+    }
+
+    public void setId_g(Guerrero id_g) {
+        this.id_g = id_g;
+    }
+
+    public void setNombre_e(Espada nombre_e) {
+        this.nombre_e = nombre_e;
     }
 }

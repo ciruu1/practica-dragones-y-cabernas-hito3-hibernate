@@ -6,22 +6,40 @@ import javax.persistence.*;
 @Table(name = "tieneBaculo")
 public class TieneBaculo {
     @Id
-    @Column(name = "id_m", nullable = false)
-    private int id_m;
-    
-    @Column(name = "nombre_b", nullable = false)
-    private String nombre_b;
+    @GeneratedValue
+    @Column(name = "id")
+    private Long id;
 
-    public TieneBaculo(int id_m, String nombre_b) {
+    @ManyToOne
+    @JoinColumn(name = "id_m")
+    private Mago id_m;
+
+    @ManyToOne
+    @JoinColumn(name = "nombre_b")
+    private Baculo nombre_b;
+
+    public TieneBaculo(Mago id_m, Baculo nombre_b) {
         this.id_m = id_m;
         this.nombre_b = nombre_b;
     }
 
-    public int getId_m() {
+    public TieneBaculo() {
+
+    }
+
+    public Mago getId_m() {
         return id_m;
     }
 
-    public String getNombre_b() {
+    public Baculo getNombre_b() {
         return nombre_b;
+    }
+
+    public void setId_m(Mago id_m) {
+        this.id_m = id_m;
+    }
+
+    public void setNombre_b(Baculo nombre_b) {
+        this.nombre_b = nombre_b;
     }
 }

@@ -21,6 +21,10 @@ public class Pocion {
         this.vida = vida;
     }
 
+    public Pocion() {
+
+    }
+
     public int getCodigo_po() {
         return codigo_po;
     }
@@ -31,5 +35,17 @@ public class Pocion {
 
     public int getVida() {
         return vida;
+    }
+
+    public void setCodigo_po(int codigo_po) {
+        this.codigo_po = codigo_po;
+    }
+
+    public void setMana(int mana) {
+        this.mana = mana;
+    }
+
+    public void setVida(int vida) {
+        this.vida = vida;
     }
 }

@@ -6,31 +6,53 @@ import javax.persistence.*;
 @Table(name = "mejoraHacha")
 public class MejoraHacha {
     @Id
-    @Column(name = "nombre_f", nullable = false)
-    private String nombre_f;
-    
-    @Column(name = "nombre_h", nullable = false)
-    private String nombre_h;
-    
-    @Column(name = "nombre_p", nullable = false)
-    private String nombre_p;
+    @GeneratedValue
+    @Column(name = "id")
+    private Long id;
 
-    public MejoraHacha(String nombre_f, String nombre_h, String nombre_p) {
+    @ManyToOne
+    @JoinColumn(name = "nombre_f")
+    private Forja nombre_f;
+
+    @ManyToOne
+    @JoinColumn(name = "nombre_h")
+    private Hacha nombre_h;
+
+    @ManyToOne
+    @JoinColumn(name = "nombre_p")
+    private Personaje nombre_p;
+
+    public MejoraHacha(Forja nombre_f, Hacha nombre_h, Personaje nombre_p) {
         this.nombre_f = nombre_f;
         this.nombre_h = nombre_h;
         this.nombre_p = nombre_p;
     }
 
-    public String getNombre_f() {
+    public MejoraHacha() {
+
+    }
+
+    public Forja getNombre_f() {
         return nombre_f;
     }
 
-    public String getNombre_h() {
+    public Hacha getNombre_h() {
         return nombre_h;
     }
 
-    public String getNombre_p() {
+    public Personaje getNombre_p() {
         return nombre_p;
     }
-    
+
+    public void setNombre_f(Forja nombre_f) {
+        this.nombre_f = nombre_f;
+    }
+
+    public void setNombre_h(Hacha nombre_h) {
+        this.nombre_h = nombre_h;
+    }
+
+    public void setNombre_p(Personaje nombre_p) {
+        this.nombre_p = nombre_p;
+    }
 }

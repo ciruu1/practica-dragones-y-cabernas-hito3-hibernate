@@ -6,22 +6,40 @@ import javax.persistence.*;
 @Table(name = "tieneHacha")
 public class TieneHacha {
     @Id
-    @Column(name = "id_t", nullable = false)
-    private int id_t;
-    
-    @Column(name = "nombre_h", nullable = false)
-    private String nombre_h;
+    @GeneratedValue
+    @Column(name = "id")
+    private Long id;
 
-    public TieneHacha(int id_t, String nombre_h) {
+    @ManyToOne
+    @JoinColumn(name = "id_t")
+    private Tanque id_t;
+
+    @ManyToOne
+    @JoinColumn(name = "nombre_h")
+    private Hacha nombre_h;
+
+    public TieneHacha(Tanque id_t, Hacha nombre_h) {
         this.id_t = id_t;
         this.nombre_h = nombre_h;
     }
 
-    public int getId_t() {
+    public TieneHacha() {
+
+    }
+
+    public Tanque getId_t() {
         return id_t;
     }
 
-    public String getNombre_h() {
+    public Hacha getNombre_h() {
         return nombre_h;
+    }
+
+    public void setId_t(Tanque id_t) {
+        this.id_t = id_t;
+    }
+
+    public void setNombre_h(Hacha nombre_h) {
+        this.nombre_h = nombre_h;
     }
 }

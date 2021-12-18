@@ -6,15 +6,27 @@ import javax.persistence.*;
 @Table(name = "desbloqueaDr")
 public class DesbloqueaDr {
     @Id
-    @Column(name = "nombre_dr", nullable = false)
-    private String nombre_dr;
+    @GeneratedValue
+    @Column(name = "id")
+    private Long id;
 
-    public DesbloqueaDr(String nombre_dr) {
+    @ManyToOne
+    @JoinColumn(name = "nombre_dr")
+    private Dragon nombre_dr;
+
+    public DesbloqueaDr(Dragon nombre_dr) {
         this.nombre_dr = nombre_dr;
     }
 
-    public String getNombre_dr() {
+    public DesbloqueaDr() {
+
+    }
+
+    public Dragon getNombre_dr() {
         return nombre_dr;
     }
-    
+
+    public void setNombre_dr(Dragon nombre_dr) {
+        this.nombre_dr = nombre_dr;
+    }
 }

@@ -25,6 +25,10 @@ public class Goblin {
         this.recompensa = recompensa;
     }
 
+    public Goblin() {
+
+    }
+
     public int getCodigo_g() {
         return codigo_g;
     }
@@ -39,5 +43,21 @@ public class Goblin {
 
     public int getRecompensa() {
         return recompensa;
+    }
+
+    public void setCodigo_g(int codigo_g) {
+        this.codigo_g = codigo_g;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setVida(int vida) {
+        this.vida = vida;
+    }
+
+    public void setRecompensa(int recompensa) {
+        this.recompensa = recompensa;
     }
 }

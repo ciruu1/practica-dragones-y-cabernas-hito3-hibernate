@@ -21,12 +21,14 @@ public class Personaje {
     
     @Column(name = "oroacumulado", nullable = false)
     private int oroacumulado;
-    
-    @Column(name = "nombre_d", nullable = false)
-    private String nombre_d;
-    
-    @Column(name = "nombre_j", nullable = false)
-    private String nombre_j;
+
+    @ManyToOne
+    @JoinColumn(name = "nombre_d")
+    private Daga nombre_d;
+
+    @ManyToOne
+    @JoinColumn(name = "nombre_j")
+    private Jugador nombre_j;
     
     @Column(name = "vida", nullable = false)
     private int vida;
@@ -34,7 +36,7 @@ public class Personaje {
     @Column(name = "ultima_conexion", nullable = false)
     private Date ultima_conexion;
 
-    public Personaje(String nombre_p, int nivel, int peso, String apariencia, int oroacumulado, String nombre_d, String nombre_j, int vida, Date ultima_conexion) {
+    public Personaje(String nombre_p, int nivel, int peso, String apariencia, int oroacumulado, Daga nombre_d, Jugador nombre_j, int vida, Date ultima_conexion) {
         this.nombre_p = nombre_p;
         this.nivel = nivel;
         this.peso = peso;
@@ -44,6 +46,10 @@ public class Personaje {
         this.nombre_j = nombre_j;
         this.vida = vida;
         this.ultima_conexion = ultima_conexion;
+    }
+
+    public Personaje() {
+
     }
 
     public String getNombre_p() {
@@ -66,11 +72,11 @@ public class Personaje {
         return oroacumulado;
     }
 
-    public String getNombre_d() {
+    public Daga getNombre_d() {
         return nombre_d;
     }
 
-    public String getNombre_j() {
+    public Jugador getNombre_j() {
         return nombre_j;
     }
 
@@ -80,5 +86,41 @@ public class Personaje {
 
     public Date getUltima_conexion() {
         return ultima_conexion;
+    }
+
+    public void setNombre_p(String nombre_p) {
+        this.nombre_p = nombre_p;
+    }
+
+    public void setNivel(int nivel) {
+        this.nivel = nivel;
+    }
+
+    public void setPeso(int peso) {
+        this.peso = peso;
+    }
+
+    public void setApariencia(String apariencia) {
+        this.apariencia = apariencia;
+    }
+
+    public void setOroacumulado(int oroacumulado) {
+        this.oroacumulado = oroacumulado;
+    }
+
+    public void setNombre_d(Daga nombre_d) {
+        this.nombre_d = nombre_d;
+    }
+
+    public void setNombre_j(Jugador nombre_j) {
+        this.nombre_j = nombre_j;
+    }
+
+    public void setVida(int vida) {
+        this.vida = vida;
+    }
+
+    public void setUltima_conexion(Date ultima_conexion) {
+        this.ultima_conexion = ultima_conexion;
     }
 }

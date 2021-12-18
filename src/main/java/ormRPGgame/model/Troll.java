@@ -25,6 +25,10 @@ public class Troll {
         this.recompensa = recompensa;
     }
 
+    public Troll() {
+
+    }
+
     public int getCodigo_t() {
         return codigo_t;
     }
@@ -39,5 +43,21 @@ public class Troll {
 
     public int getRecompensa() {
         return recompensa;
+    }
+
+    public void setCodigo_t(int codigo_t) {
+        this.codigo_t = codigo_t;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setVida(int vida) {
+        this.vida = vida;
+    }
+
+    public void setRecompensa(int recompensa) {
+        this.recompensa = recompensa;
     }
 }

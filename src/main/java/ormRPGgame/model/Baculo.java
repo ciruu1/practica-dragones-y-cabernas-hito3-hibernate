@@ -6,7 +6,7 @@ import javax.persistence.*;
 @Table(name = "baculo")
 public class Baculo {
     @Id
-    @Column(name = "nombre_b", nullable = false)
+    @Column(name = "nombre_b", nullable = false, unique = true)
     private String nombre_b;
 
     @Column(name = "peso", nullable = false)
@@ -21,6 +21,10 @@ public class Baculo {
         this.damage = damage;
     }
 
+    public Baculo() {
+
+    }
+
     public String getNombre_b() {
         return nombre_b;
     }
@@ -31,5 +35,17 @@ public class Baculo {
 
     public int getDamage() {
         return damage;
+    }
+
+    public void setNombre_b(String nombre_b) {
+        this.nombre_b = nombre_b;
+    }
+
+    public void setPeso(int peso) {
+        this.peso = peso;
+    }
+
+    public void setDamage(int damage) {
+        this.damage = damage;
     }
 }

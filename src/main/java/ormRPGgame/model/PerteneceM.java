@@ -6,22 +6,40 @@ import javax.persistence.*;
 @Table(name = "perteneceM")
 public class PerteneceM {
     @Id
-    @Column(name = "nombre_esc", nullable = false)
-    private String nombre_esc;
-    
-    @Column(name = "id_m", nullable = false)
-    private int id_m;
+    @GeneratedValue
+    @Column(name = "id")
+    private Long id;
 
-    public PerteneceM(String nombre_esc, int id_m) {
+    @ManyToOne
+    @JoinColumn(name = "nombre_esc")
+    private Escuadron nombre_esc;
+
+    @ManyToOne
+    @JoinColumn(name = "id_m")
+    private Mago id_m;
+
+    public PerteneceM(Escuadron nombre_esc, Mago id_m) {
         this.nombre_esc = nombre_esc;
         this.id_m = id_m;
     }
 
-    public String getNombre_esc() {
+    public PerteneceM() {
+
+    }
+
+    public Escuadron getNombre_esc() {
         return nombre_esc;
     }
 
-    public int getId_m() {
+    public Mago getId_m() {
         return id_m;
+    }
+
+    public void setNombre_esc(Escuadron nombre_esc) {
+        this.nombre_esc = nombre_esc;
+    }
+
+    public void setId_m(Mago id_m) {
+        this.id_m = id_m;
     }
 }

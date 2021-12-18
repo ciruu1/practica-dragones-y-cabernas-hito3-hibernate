@@ -21,6 +21,10 @@ public class Hacha {
         this.damage = damage;
     }
 
+    public Hacha() {
+
+    }
+
     public String getNombre_h() {
         return nombre_h;
     }
@@ -31,5 +35,17 @@ public class Hacha {
 
     public int getDamage() {
         return damage;
+    }
+
+    public void setNombre_h(String nombre_h) {
+        this.nombre_h = nombre_h;
+    }
+
+    public void setPeso(int peso) {
+        this.peso = peso;
+    }
+
+    public void setDamage(int damage) {
+        this.damage = damage;
     }
 }

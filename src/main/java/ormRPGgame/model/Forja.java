@@ -11,14 +11,19 @@ public class Forja {
     
     @Column(name = "owner", nullable = false)
     private String owner; // Dueño
-    
-    @Column(name = "nombre_c", nullable = false)
-    private String nombre_c;
 
-    public Forja(String nombre_f, String owner, String nombre_c) {
+    @ManyToOne
+    @JoinColumn(name = "nombre_c")
+    private Ciudad nombre_c;
+
+    public Forja(String nombre_f, String owner, Ciudad nombre_c) {
         this.nombre_f = nombre_f;
         this.owner = owner;
         this.nombre_c = nombre_c;
+    }
+
+    public Forja() {
+
     }
 
     public String getNombre_f() {
@@ -29,7 +34,19 @@ public class Forja {
         return owner;
     }
 
-    public String getNombre_c() {
+    public Ciudad getNombre_c() {
         return nombre_c;
+    }
+
+    public void setNombre_f(String nombre_f) {
+        this.nombre_f = nombre_f;
+    }
+
+    public void setOwner(String owner) {
+        this.owner = owner;
+    }
+
+    public void setNombre_c(Ciudad nombre_c) {
+        this.nombre_c = nombre_c;
     }
 }

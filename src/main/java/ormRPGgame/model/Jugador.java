@@ -13,7 +13,15 @@ public class Jugador {
         this.nombre_j = nombre_j;
     }
 
+    public Jugador() {
+
+    }
+
     public String getNombre_j() {
         return nombre_j;
+    }
+
+    public void setNombre_j(String nombre_j) {
+        this.nombre_j = nombre_j;
     }
 }

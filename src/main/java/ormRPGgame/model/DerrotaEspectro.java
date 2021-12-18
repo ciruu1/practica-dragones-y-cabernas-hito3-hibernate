@@ -6,23 +6,40 @@ import javax.persistence.*;
 @Table(name = "derrotaEspectro")
 public class DerrotaEspectro {
     @Id
-    @Column(name = "id_m", nullable = false)
-    private int id_m;
-    
-    @Column(name = "codigo_e", nullable = false)
-    private int codigo_e;
+    @GeneratedValue
+    @Column(name = "id")
+    private Long id;
 
-    public DerrotaEspectro(int id_m, int codigo_e) {
+    @ManyToOne
+    @JoinColumn(name = "id_m")
+    private Mago id_m;
+
+    @ManyToOne
+    @JoinColumn(name = "codigo_e")
+    private Espectro codigo_e;
+
+    public DerrotaEspectro(Mago id_m, Espectro codigo_e) {
         this.id_m = id_m;
         this.codigo_e = codigo_e;
     }
 
-    public int getId_m() {
+    public DerrotaEspectro() {
+
+    }
+
+    public Mago getId_m() {
         return id_m;
     }
 
-    public int getCodigo_e() {
+    public Espectro getCodigo_e() {
         return codigo_e;
     }
-    
+
+    public void setId_m(Mago id_m) {
+        this.id_m = id_m;
+    }
+
+    public void setCodigo_e(Espectro codigo_e) {
+        this.codigo_e = codigo_e;
+    }
 }
