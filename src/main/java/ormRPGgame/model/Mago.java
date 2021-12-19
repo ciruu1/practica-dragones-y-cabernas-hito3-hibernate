@@ -23,6 +23,9 @@ public class Mago {
     @ManyToMany(mappedBy = "magos")
     private Set<Baculo> baculos;
     
+    @ManyToMany(mappedBy = "magos1")
+    private Set<Espectro> espectros;
+    
     @ManyToOne
     @JoinColumn(name = "nombre_p")
     private Personaje nombre_p;
