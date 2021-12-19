@@ -19,7 +19,7 @@ public class Espectro {
     private int recompensa;
     
     @ManyToMany()
-    @JoinTable(name = "derrota_esp")
+    @JoinTable(name = "DerrotaEspectro")
     private Set<Mago> magos1;
 
     public Espectro(int codigo_e, String nombre, int vida, int recompensa) {
