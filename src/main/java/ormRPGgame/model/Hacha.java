@@ -16,8 +16,8 @@ public class Hacha {
     private int damage; // Daño
     
     @ManyToMany()
-    @JoinTable(name = "tiene_espada")
-    private Set<Tanque> tanque;
+    @JoinTable(name = "tiene_hacha")
+    private Set<Tanque> tanques;
 
     public Hacha(String nombre_h, int peso, int damage) {
         this.nombre_h = nombre_h;
