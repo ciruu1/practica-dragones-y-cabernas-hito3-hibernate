@@ -10,7 +10,7 @@ public class DerrotaGoblin {
     @Column(name = "id")
     private Long id;
 
-    @OneToMany(mappedBy = "id_g")@OneToMany(mappedBy="id_t")
+    @OneToMany(mappedBy = "id_g")
     @JoinColumn(name = "id_g")
     private Guerrero id_g;
 
