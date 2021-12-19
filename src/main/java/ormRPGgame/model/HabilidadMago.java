@@ -11,6 +11,10 @@ public class HabilidadMago {
     
     @Column(name = "descripcion", nullable = false)
     private String descripcion;
+    
+    @ManyToMany()
+    @JoinTable(name = "PoseeM")
+    private Set<Mago> magos;
 
     public HabilidadMago(String nombre_hm, String descripcion) {
         this.nombre_hm = nombre_hm;
