@@ -1,6 +1,8 @@
 package ormRPGgame.model;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "posee_m")
@@ -14,24 +16,25 @@ public class PoseeM {
     @JoinColumn(name = "id_m")
     private Mago id_m;
 
-    @ManyToOne
+    @OneToMany
     @JoinColumn(name = "nombre_hm")
-    private HabilidadMago nombre_hm;
+    private Set<HabilidadMago> nombre_hm;
 
     public PoseeM(Mago id_m, HabilidadMago nombre_hm) {
         this.id_m = id_m;
-        this.nombre_hm = nombre_hm;
+        this.nombre_hm = new HashSet<>();
+        this.nombre_hm.add(nombre_hm);
     }
 
     public PoseeM() {
-
+        this.nombre_hm = new HashSet<>();
     }
 
     public Mago getId_m() {
         return id_m;
     }
 
-    public HabilidadMago getNombre_hm() {
+    public Set<HabilidadMago> getNombre_hm() {
         return nombre_hm;
     }
 
@@ -40,6 +43,6 @@ public class PoseeM {
     }
 
     public void setNombre_hm(HabilidadMago nombre_hm) {
-        this.nombre_hm = nombre_hm;
+        this.nombre_hm.add(nombre_hm);
     }
 }

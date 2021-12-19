@@ -16,8 +16,8 @@ public class Baculo {
     private int damage;
 
     @OneToOne()
-    @JoinTable(name = "tiene_baculo")
-    private Mago mago;
+    @JoinTable(name = "id_m")
+    private Mago id_m;
 
     public Baculo(String nombre_b, int peso, int damage) {
         this.nombre_b = nombre_b;
@@ -53,11 +53,11 @@ public class Baculo {
         this.damage = damage;
     }
 
-    public Mago getMago() {
-        return mago;
+    public Mago getId_m() {
+        return id_m;
     }
 
-    public void setMago(Mago mago) {
-        this.mago = mago;
+    public void setId_m(Mago id_m) {
+        this.id_m = id_m;
     }
 }

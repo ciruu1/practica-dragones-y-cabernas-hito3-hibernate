@@ -1,7 +1,8 @@
 package ormRPGgame.model;
 
 import javax.persistence.*;
-import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "personaje")
@@ -30,12 +31,16 @@ public class Personaje {
     @JoinColumn(name = "nombre_j")
     private Jugador nombre_j;
     
-    @ManyToOne
-    @JoinColumn(name = "nombre_j")
-    private Jugador jugador;
-    
     @Column(name = "vida", nullable = false)
     private int vida;
+
+    @OneToMany
+    @JoinColumn(name = "codigo_po")
+    private Set<Pocion> codigo_po;
+
+    @OneToMany
+    @JoinColumn(name = "nombre_npc")
+    private Set<NPC> nombre_npc;
 
     public Personaje(String nombre_p, int nivel, int peso, String apariencia, int oroacumulado, Daga nombre_d, Jugador nombre_j, int vida) {
         this.nombre_p = nombre_p;
@@ -46,10 +51,13 @@ public class Personaje {
         this.nombre_d = nombre_d;
         this.nombre_j = nombre_j;
         this.vida = vida;
+        nombre_npc = new HashSet<>();
+        codigo_po = new HashSet<>();
     }
 
     public Personaje() {
-
+        nombre_npc = new HashSet<>();
+        codigo_po = new HashSet<>();
     }
 
     public String getNombre_p() {
@@ -114,5 +122,21 @@ public class Personaje {
 
     public void setVida(int vida) {
         this.vida = vida;
+    }
+
+    public Set<Pocion> getCodigo_po() {
+        return codigo_po;
+    }
+
+    public void addCodigo_po(Pocion codigo_po) {
+        this.codigo_po.add(codigo_po);
+    }
+
+    public Set<NPC> getNombre_npc() {
+        return nombre_npc;
+    }
+
+    public void addNombre_npc(NPC nombre_npc) {
+        this.nombre_npc.add(nombre_npc);
     }
 }

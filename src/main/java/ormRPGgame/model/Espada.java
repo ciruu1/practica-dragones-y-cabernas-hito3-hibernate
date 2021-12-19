@@ -15,10 +15,6 @@ public class Espada {
     
     @Column(name = "daño", nullable = false)
     private int damage; // Daño
-    
-    @ManyToMany()
-    @JoinTable(name = "tiene_espada")
-    private Set<Guerrero> guerreros;
 
     @OneToOne
     @JoinColumn(name = "id_g")

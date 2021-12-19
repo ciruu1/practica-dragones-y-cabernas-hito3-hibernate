@@ -1,6 +1,8 @@
 package ormRPGgame.model;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "habilidad_guerrero")
@@ -12,13 +14,18 @@ public class HabilidadGuerrero {
     @Column(name = "descripcion", nullable = false)
     private String descripcion;
 
+    @ManyToMany()
+    @JoinTable(name = "id_g")
+    private Set<Guerrero> id_g;
+
     public HabilidadGuerrero(String nombre_hg, String descripcion) {
         this.nombre_hg = nombre_hg;
         this.descripcion = descripcion;
+        id_g = new HashSet<>();
     }
 
     public HabilidadGuerrero() {
-
+        id_g = new HashSet<>();
     }
 
     public String getNombre_hg() {
@@ -35,5 +42,13 @@ public class HabilidadGuerrero {
 
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
+    }
+
+    public Set<Guerrero> getId_g() {
+        return id_g;
+    }
+
+    public void addId_g(Guerrero id_g) {
+        this.id_g.add(id_g);
     }
 }

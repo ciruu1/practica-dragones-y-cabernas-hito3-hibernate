@@ -29,6 +29,14 @@ public class Guerrero {
     @JoinColumn(name = "codigo_g")
     private Set<Goblin> codigo_g;
 
+    @OneToMany
+    @JoinColumn(name = "nombre_hg")
+    private Set<HabilidadGuerrero> nombre_hg;
+
+    @OneToMany
+    @JoinColumn(name = "nombre_esc")
+    private Set<Escuadron> nombre_esc;
+
     public Guerrero(int id_g, int mana, int fuerza, Personaje nombre_p) {
         this.id_g = id_g;
         this.mana = mana;
@@ -36,11 +44,15 @@ public class Guerrero {
         this.nombre_p = nombre_p;
         this.nombre_e = new HashSet<>();
         this.codigo_g = new HashSet<>();
+        this.nombre_hg = new HashSet<>();
+        nombre_esc = new HashSet<>();
     }
 
     public Guerrero() {
         this.nombre_e = new HashSet<>();
         this.codigo_g = new HashSet<>();
+        this.nombre_hg = new HashSet<>();
+        nombre_esc = new HashSet<>();
     }
 
     public int getId_g() {
@@ -89,5 +101,21 @@ public class Guerrero {
 
     public void addCodigo_g(Goblin codigo_g) {
         this.codigo_g.add(codigo_g);
+    }
+
+    public Set<HabilidadGuerrero> getNombre_hg() {
+        return nombre_hg;
+    }
+
+    public void addNombre_hg(HabilidadGuerrero nombre_hg) {
+        this.nombre_hg.add(nombre_hg);
+    }
+
+    public Set<Escuadron> getNombre_esc() {
+        return nombre_esc;
+    }
+
+    public void addNombre_esc(Escuadron nombre_esc) {
+        this.nombre_esc.add(nombre_esc);
     }
 }

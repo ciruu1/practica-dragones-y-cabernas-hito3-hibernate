@@ -1,6 +1,7 @@
 package ormRPGgame.model;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -19,19 +20,20 @@ public class Espectro {
     @Column(name = "recompensa", nullable = false)
     private int recompensa;
 
-    @ManyToOne
+    @OneToMany
     @JoinColumn(name = "id_m")
-    private Mago id_m;
+    private Set<Mago> id_m;
 
     public Espectro(int codigo_e, String nombre, int vida, int recompensa) {
         this.codigo_e = codigo_e;
         this.nombre = nombre;
         this.vida = vida;
         this.recompensa = recompensa;
+        this.id_m = new HashSet<>();
     }
 
     public Espectro() {
-
+        this.id_m = new HashSet<>();
     }
 
     public int getCodigo_e() {
@@ -66,11 +68,11 @@ public class Espectro {
         this.recompensa = recompensa;
     }
 
-    public Mago getId_m() {
+    public Set<Mago> getId_m() {
         return id_m;
     }
 
-    public void setId_m(Mago id_m) {
-        this.id_m = id_m;
+    public void addId_m(Mago id_m) {
+        this.id_m.add(id_m);
     }
 }

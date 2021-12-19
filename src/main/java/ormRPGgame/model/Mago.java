@@ -28,16 +28,34 @@ public class Mago {
     @JoinColumn(name = "codigo_e")
     private Set<Espectro> codigo_e;
 
+    @OneToMany
+    @JoinColumn(name = "nombre_hm")
+    private Set<HabilidadMago> nombre_hm;
+
+    @OneToMany
+    @JoinColumn(name = "nombre_b")
+    private Set<Baculo> nombre_b;
+
+    @OneToMany
+    @JoinColumn(name = "nombre_esc")
+    private Set<Escuadron> nombre_esc;
+
     public Mago(int id_m, int mana, int fuerza, Personaje nombre_p) {
         this.id_m = id_m;
         this.mana = mana;
         this.fuerza = fuerza;
         this.nombre_p = nombre_p;
         codigo_e = new HashSet<>();
+        nombre_hm = new HashSet<>();
+        nombre_b = new HashSet<>();
+        nombre_esc = new HashSet<>();
     }
 
     public Mago() {
         codigo_e = new HashSet<>();
+        nombre_hm = new HashSet<>();
+        nombre_b = new HashSet<>();
+        nombre_esc = new HashSet<>();
     }
 
     public int getId_m() {
@@ -78,5 +96,29 @@ public class Mago {
 
     public void addCodigo_e(Espectro codigo_e) {
         this.codigo_e.add(codigo_e);
+    }
+
+    public Set<HabilidadMago> getNombre_hm() {
+        return nombre_hm;
+    }
+
+    public void addNombre_hm(HabilidadMago nombre_hm) {
+        this.nombre_hm.add(nombre_hm);
+    }
+
+    public Set<Baculo> getNombre_b() {
+        return nombre_b;
+    }
+
+    public void addNombre_b(Baculo nombre_b) {
+        this.nombre_b.add(nombre_b);
+    }
+
+    public Set<Escuadron> getNombre_esc() {
+        return nombre_esc;
+    }
+
+    public void addNombre_esc(Escuadron nombre_esc) {
+        this.nombre_esc.add(nombre_esc);
     }
 }

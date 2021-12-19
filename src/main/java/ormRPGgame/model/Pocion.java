@@ -1,6 +1,7 @@
 package ormRPGgame.model;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name = "pocion")
@@ -14,6 +15,10 @@ public class Pocion {
     
     @Column(name = "vida", nullable = false)
     private int vida;
+
+    @ManyToOne
+    @JoinColumn(name = "nombre_p")
+    private Personaje nombre_p;
 
     public Pocion(int codigo_po, int mana, int vida) {
         this.codigo_po = codigo_po;
@@ -47,5 +52,13 @@ public class Pocion {
 
     public void setVida(int vida) {
         this.vida = vida;
+    }
+
+    public Personaje getNombre_p() {
+        return nombre_p;
+    }
+
+    public void setNombre_p(Personaje nombre_p) {
+        this.nombre_p = nombre_p;
     }
 }

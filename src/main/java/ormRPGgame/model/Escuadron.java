@@ -10,9 +10,6 @@ public class Escuadron {
     @Id
     @Column(name = "nombre_esc", nullable = false, unique = true)
     private String nombre_esc;
-    
-    @ManyToMany(mappedBy = "escuadrones")
-    private Set<Dragon> dragones;
 
     @OneToMany
     @JoinColumn(name = "nombre_dr")

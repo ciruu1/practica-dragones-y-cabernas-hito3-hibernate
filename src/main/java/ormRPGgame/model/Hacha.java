@@ -15,6 +15,10 @@ public class Hacha {
     @Column(name = "daño", nullable = false)
     private int damage; // Daño
 
+    @OneToOne()
+    @JoinTable(name = "id_t")
+    private Tanque id_t;
+
     public Hacha(String nombre_h, int peso, int damage) {
         this.nombre_h = nombre_h;
         this.peso = peso;
@@ -47,5 +51,13 @@ public class Hacha {
 
     public void setDamage(int damage) {
         this.damage = damage;
+    }
+
+    public Tanque getId_t() {
+        return id_t;
+    }
+
+    public void setId_t(Tanque id_t) {
+        this.id_t = id_t;
     }
 }
