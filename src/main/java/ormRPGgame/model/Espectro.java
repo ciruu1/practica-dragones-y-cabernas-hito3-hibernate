@@ -1,6 +1,7 @@
 package ormRPGgame.model;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name = "espectro")
@@ -21,6 +22,10 @@ public class Espectro {
     @ManyToMany()
     @JoinTable(name = "DerrotaEspectro")
     private Set<Mago> magos1;
+
+    @ManyToOne
+    @JoinColumn(name = "id_m")
+    private Mago id_m;
 
     public Espectro(int codigo_e, String nombre, int vida, int recompensa) {
         this.codigo_e = codigo_e;
@@ -63,5 +68,13 @@ public class Espectro {
 
     public void setRecompensa(int recompensa) {
         this.recompensa = recompensa;
+    }
+
+    public Mago getId_m() {
+        return id_m;
+    }
+
+    public void setId_m(Mago id_m) {
+        this.id_m = id_m;
     }
 }

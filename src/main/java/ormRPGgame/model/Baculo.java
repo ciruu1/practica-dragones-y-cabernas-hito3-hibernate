@@ -15,10 +15,10 @@ public class Baculo {
     @Column(name = "daño", nullable = false)
     private int damage;
 
-    @ManyToMany()
+    @OneToOne()
     @JoinTable(name = "tiene_baculo")
-    private Set<Mago> magos;
-    
+    private Mago mago;
+
     public Baculo(String nombre_b, int peso, int damage) {
         this.nombre_b = nombre_b;
         this.peso = peso;
@@ -51,5 +51,13 @@ public class Baculo {
 
     public void setDamage(int damage) {
         this.damage = damage;
+    }
+
+    public Mago getMago() {
+        return mago;
+    }
+
+    public void setMago(Mago mago) {
+        this.mago = mago;
     }
 }

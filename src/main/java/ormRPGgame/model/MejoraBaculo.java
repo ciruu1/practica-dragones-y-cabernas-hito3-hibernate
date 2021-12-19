@@ -1,6 +1,8 @@
 package ormRPGgame.model;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "mejora_baculo")
@@ -10,49 +12,54 @@ public class MejoraBaculo {
     @Column(name = "id")
     private Long id;
 
-    @ManyToOne
+    @OneToMany
     @JoinColumn(name = "nombre_f")
-    private Forja nombre_f;
+    private Set<Forja> nombre_f;
 
-    @ManyToOne
+    @OneToMany
     @JoinColumn(name = "nombre_b")
-    private Baculo nombre_b;
+    private Set<Baculo> nombre_b;
 
-    @ManyToOne
+    @OneToMany
     @JoinColumn(name = "nombre_p")
-    private Personaje nombre_p;
+    private Set<Personaje> nombre_p;
 
     public MejoraBaculo(Forja nombre_f, Baculo nombre_b, Personaje nombre_p) {
-        this.nombre_f = nombre_f;
-        this.nombre_b = nombre_b;
-        this.nombre_p = nombre_p;
+        this.nombre_f = new HashSet<>();
+        this.nombre_b = new HashSet<>();
+        this.nombre_p = new HashSet<>();
+        this.nombre_f.add(nombre_f);
+        this.nombre_b.add(nombre_b);
+        this.nombre_p.add(nombre_p);
     }
 
     public MejoraBaculo() {
-
+        this.nombre_f = new HashSet<>();
+        this.nombre_b = new HashSet<>();
+        this.nombre_p = new HashSet<>();
     }
 
-    public Forja getNombre_f() {
+    public Set<Forja> getNombre_f() {
         return nombre_f;
     }
 
-    public Baculo getNombre_b() {
+    public Set<Baculo> getNombre_b() {
         return nombre_b;
     }
 
-    public Personaje getNombre_p() {
+    public Set<Personaje> getNombre_p() {
         return nombre_p;
     }
 
     public void setNombre_f(Forja nombre_f) {
-        this.nombre_f = nombre_f;
+        this.nombre_f.add(nombre_f);
     }
 
     public void setNombre_b(Baculo nombre_b) {
-        this.nombre_b = nombre_b;
+        this.nombre_b.add(nombre_b);
     }
 
     public void setNombre_p(Personaje nombre_p) {
-        this.nombre_p = nombre_p;
+        this.nombre_p.add(nombre_p);
     }
 }

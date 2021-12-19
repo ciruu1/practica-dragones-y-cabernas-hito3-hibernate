@@ -33,7 +33,6 @@
         <mapping class="ormRPGgame.model.DerrotaEspectro"/>
         <mapping class="ormRPGgame.model.DerrotaGoblin"/>
         <mapping class="ormRPGgame.model.DerrotaTroll"/>
-        <mapping class="ormRPGgame.model.DesbloqueaDr"/>
         <mapping class="ormRPGgame.model.Dragon"/>
         <mapping class="ormRPGgame.model.Escuadron"/>
         <mapping class="ormRPGgame.model.Espada"/>

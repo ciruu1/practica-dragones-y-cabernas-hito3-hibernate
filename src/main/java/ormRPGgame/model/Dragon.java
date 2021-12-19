@@ -1,6 +1,8 @@
 package ormRPGgame.model;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "dragon")
@@ -14,25 +16,20 @@ public class Dragon {
     
     @Column(name = "recompensa", nullable = false)
     private int recompensa;
-    
-    @Column(name = "desbloquea_dr", nullable = false)
-    private String desbloquea_dr;
-    
-    @ManyToMany()
-    @JoinTable(name = "lucha")
-    private Set<Escuadron> escuadrones;
-    
 
-    public Dragon(String nombre_dr, int vida, int recompensa, String desbloquea_dr) {
+    @OneToMany
+    @JoinColumn(name = "nombre_esc")
+    private Set<Escuadron> nombre_esc;
+
+    public Dragon(String nombre_dr, int vida, int recompensa) {
         this.nombre_dr = nombre_dr;
         this.vida = vida;
         this.recompensa = recompensa;
-        this.desbloquea_dr = desbloquea_dr;
-        
+        this.nombre_esc = new HashSet<>();
     }
 
     public Dragon() {
-
+        this.nombre_esc = new HashSet<>();
     }
 
     public String getNombre_dr() {
@@ -46,10 +43,6 @@ public class Dragon {
     public int getRecompensa() {
         return recompensa;
     }
-    
-    public String getDesbloquea_dr() {
-        return desbloquea_dr;
-    }
 
     public void setNombre_dr(String nombre_dr) {
         this.nombre_dr = nombre_dr;
@@ -62,7 +55,12 @@ public class Dragon {
     public void setRecompensa(int recompensa) {
         this.recompensa = recompensa;
     }
-    
-    public void setDesbloquea_dr(String desbloquea_dr) {
-        this.desbloquea_dr = desbloquea_dr;
+
+    public Set<Escuadron> getNombre_esc() {
+        return nombre_esc;
+    }
+
+    public void addNombre_esc(Escuadron escuadron) {
+        this.nombre_esc.add(escuadron);
+    }
 }

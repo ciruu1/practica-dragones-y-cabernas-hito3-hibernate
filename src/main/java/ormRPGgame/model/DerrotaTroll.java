@@ -1,6 +1,8 @@
 package ormRPGgame.model;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "derrota_troll")
@@ -10,28 +12,29 @@ public class DerrotaTroll {
     @Column(name = "id")
     private Long id;
 
-    @OneToMany(mappedBy="id_t")
+    @ManyToOne
     @JoinColumn(name = "id_t")
     private Tanque id_t;
 
-    @OneToMany(mappedBy="codigo_t")
+    @OneToMany
     @JoinColumn(name = "codigo_t")
-    private Troll codigo_t;
+    private Set<Troll> codigo_t;
 
     public DerrotaTroll(Tanque id_t, Troll codigo_t) {
+        this.codigo_t = new HashSet<>();
+        this.codigo_t.add(codigo_t);
         this.id_t = id_t;
-        this.codigo_t = codigo_t;
     }
 
     public DerrotaTroll() {
-
+        this.codigo_t = new HashSet<>();
     }
 
     public Tanque getId_t() {
         return id_t;
     }
 
-    public Troll getCodigo_t() {
+    public Set<Troll> getCodigo_t() {
         return codigo_t;
     }
 
@@ -39,7 +42,7 @@ public class DerrotaTroll {
         this.id_t = id_t;
     }
 
-    public void setCodigo_t(Troll codigo_t) {
-        this.codigo_t = codigo_t;
+    public void addCodigo_t(Troll codigo_t) {
+        this.codigo_t.add(codigo_t);
     }
 }

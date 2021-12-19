@@ -1,6 +1,8 @@
 package ormRPGgame.model;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "derrota_goblin")
@@ -10,28 +12,29 @@ public class DerrotaGoblin {
     @Column(name = "id")
     private Long id;
 
-    @OneToMany(mappedBy = "id_g")
+    @ManyToOne
     @JoinColumn(name = "id_g")
     private Guerrero id_g;
 
-    @OneToMany(mappedBy = "codigo_g")
+    @OneToMany
     @JoinColumn(name = "codigo_g")
-    private Goblin codigo_g;
+    private Set<Goblin> codigo_g;
 
     public DerrotaGoblin(Guerrero id_g, Goblin codigo_g) {
+        this.codigo_g = new HashSet<>();
+        this.codigo_g.add(codigo_g);
         this.id_g = id_g;
-        this.codigo_g = codigo_g;
     }
 
     public DerrotaGoblin() {
-
+        this.codigo_g = new HashSet<>();
     }
 
     public Guerrero getId_g() {
         return id_g;
     }
 
-    public Goblin getCodigo_g() {
+    public Set<Goblin> getCodigo_g() {
         return codigo_g;
     }
 
@@ -40,6 +43,6 @@ public class DerrotaGoblin {
     }
 
     public void setCodigo_g(Goblin codigo_g) {
-        this.codigo_g = codigo_g;
+        this.codigo_g.add(codigo_g);
     }
 }

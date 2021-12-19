@@ -33,15 +33,20 @@ public class Mago {
     @JoinColumn(name = "nombre_p")
     private Personaje nombre_p;
 
+    @OneToMany
+    @JoinColumn(name = "codigo_e")
+    private Set<Espectro> codigo_e;
+
     public Mago(int id_m, int mana, int fuerza, Personaje nombre_p) {
         this.id_m = id_m;
         this.mana = mana;
         this.fuerza = fuerza;
         this.nombre_p = nombre_p;
+        codigo_e = new HashSet<>();
     }
 
     public Mago() {
-
+        codigo_e = new HashSet<>();
     }
 
     public int getId_m() {
@@ -74,5 +79,13 @@ public class Mago {
 
     public void setNombre_p(Personaje nombre_p) {
         this.nombre_p = nombre_p;
+    }
+
+    public Set<Espectro> getCodigo_e() {
+        return codigo_e;
+    }
+
+    public void addCodigo_e(Espectro codigo_e) {
+        this.codigo_e.add(codigo_e);
     }
 }

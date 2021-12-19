@@ -1,6 +1,8 @@
 package ormRPGgame.model;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "guerrero")
@@ -21,19 +23,30 @@ public class Guerrero {
     @ManyToMany(mappedBy = "guerr")
     private Set<Goblin> goblins;
 
-    @ManyToOne
+    @OneToOne
     @JoinColumn(name = "nombre_p")
     private Personaje nombre_p;
+
+    @OneToMany
+    @JoinColumn(name = "nombre_e")
+    private Set<Espada> nombre_e;
+
+    @OneToMany
+    @JoinColumn(name = "codigo_g")
+    private Set<Goblin> codigo_g;
 
     public Guerrero(int id_g, int mana, int fuerza, Personaje nombre_p) {
         this.id_g = id_g;
         this.mana = mana;
         this.fuerza = fuerza;
         this.nombre_p = nombre_p;
+        this.nombre_e = new HashSet<>();
+        this.codigo_g = new HashSet<>();
     }
 
     public Guerrero() {
-
+        this.nombre_e = new HashSet<>();
+        this.codigo_g = new HashSet<>();
     }
 
     public int getId_g() {
@@ -66,5 +79,21 @@ public class Guerrero {
 
     public void setNombre_p(Personaje nombre_p) {
         this.nombre_p = nombre_p;
+    }
+
+    public Set<Espada> getNombre_e() {
+        return nombre_e;
+    }
+
+    public void addNombre_e(Espada nombre_e) {
+        this.nombre_e.add(nombre_e);
+    }
+
+    public Set<Goblin> getCodigo_g() {
+        return codigo_g;
+    }
+
+    public void addCodigo_g(Goblin codigo_g) {
+        this.codigo_g.add(codigo_g);
     }
 }
