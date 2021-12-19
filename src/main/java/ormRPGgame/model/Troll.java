@@ -18,6 +18,10 @@ public class Troll {
     @Column(name = "recompensa", nullable = false)
     private int recompensa;
 
+    @ManyToMany()
+    @JoinTable(name = "DerrotaTroll")
+    private Set<Tanque> tank;
+    
     public Troll(int codigo_t, String nombre, int vida, int recompensa) {
         this.codigo_t = codigo_t;
         this.nombre = nombre;
