@@ -14,7 +14,7 @@ public class DerrotaGoblin {
     @JoinColumn(name = "id_g")
     private Guerrero id_g;
 
-    @OneToMany(name = "codigo_g")
+    @OneToMany(mappedBy = "codigo_g")
     @JoinColumn(name = "codigo_g")
     private Goblin codigo_g;
 
