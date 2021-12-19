@@ -14,11 +14,17 @@ public class Dragon {
     
     @Column(name = "recompensa", nullable = false)
     private int recompensa;
+    
+    @Column(name = "desbloquea_dr", nullable = false)
+    private String desbloquea_dr;
+    
 
-    public Dragon(String nombre_dr, int vida, int recompensa) {
+    public Dragon(String nombre_dr, int vida, int recompensa, String desbloquea_dr) {
         this.nombre_dr = nombre_dr;
         this.vida = vida;
         this.recompensa = recompensa;
+        this.desbloquea_dr = desbloquea_dr;
+        
     }
 
     public Dragon() {
@@ -36,6 +42,10 @@ public class Dragon {
     public int getRecompensa() {
         return recompensa;
     }
+    
+    public String getDesbloquea_dr() {
+        return desbloquea_dr;
+    }
 
     public void setNombre_dr(String nombre_dr) {
         this.nombre_dr = nombre_dr;
@@ -48,4 +58,7 @@ public class Dragon {
     public void setRecompensa(int recompensa) {
         this.recompensa = recompensa;
     }
+    
+    public void setDesbloquea_dr(String desbloquea_dr) {
+        this.desbloquea_dr = desbloquea_dr;
 }
