@@ -18,6 +18,10 @@ public class Goblin {
     @Column(name = "recompensa", nullable = false)
     private int recompensa;
 
+    @ManyToMany()
+    @JoinTable(name = "DerrotaGoblin")
+    private Set<Guerrero> guerr;
+    
     public Goblin(int codigo_g, String nombre, int vida, int recompensa) {
         this.codigo_g = codigo_g;
         this.nombre = nombre;
