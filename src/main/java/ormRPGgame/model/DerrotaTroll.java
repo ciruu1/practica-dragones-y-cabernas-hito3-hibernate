@@ -10,11 +10,11 @@ public class DerrotaTroll {
     @Column(name = "id")
     private Long id;
 
-    @ManyToOne
+    @OneToMany(mappedBy="id_t")
     @JoinColumn(name = "id_t")
     private Tanque id_t;
 
-    @ManyToOne
+    @OneToMany(mappedBy="codigo_t")
     @JoinColumn(name = "codigo_t")
     private Troll codigo_t;
 
