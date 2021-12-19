@@ -17,6 +17,9 @@ public class Guerrero {
     
     @ManyToMany(mappedBy = "guerreros")
     private Set<Espada> espadas;
+    
+    @ManyToMany(mappedBy = "guerr")
+    private Set<Goblin> goblins;
 
     @ManyToOne
     @JoinColumn(name = "nombre_p")
