@@ -28,6 +28,10 @@ public class Personaje {
 
     @ManyToOne
     @JoinColumn(name = "nombre_j")
+    private Jugador nombre_j;
+    
+    @ManyToOne
+    @JoinColumn(name = "nombre_j")
     private Jugador jugador;
     
     @Column(name = "vida", nullable = false)
