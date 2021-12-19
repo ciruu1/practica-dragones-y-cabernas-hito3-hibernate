@@ -9,7 +9,7 @@ import java.util.Set;
 @Table(name = "mago")
 public class Mago {
     // @TODO completar las anotaciones de todos los atributos
-
+    
     @Id
     @Column(name = "id_m", nullable = false)
     private int id_m;
@@ -19,7 +19,10 @@ public class Mago {
     
     @Column(name = "fuerza", nullable = false)
     private int fuerza;
-
+    
+    @ManyToMany(mappedBy = "magos")
+    private Set<Baculo> baculos;
+    
     @ManyToOne
     @JoinColumn(name = "nombre_p")
     private Personaje nombre_p;
