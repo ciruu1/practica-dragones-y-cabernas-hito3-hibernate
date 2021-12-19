@@ -10,11 +10,11 @@ public class DerrotaGoblin {
     @Column(name = "id")
     private Long id;
 
-    @ManyToOne
+    @OneToMany(mappedBy = "id_g")@OneToMany(mappedBy="id_t")
     @JoinColumn(name = "id_g")
     private Guerrero id_g;
 
-    @ManyToOne
+    @OneToMany(name = "codigo_g")
     @JoinColumn(name = "codigo_g")
     private Goblin codigo_g;
 
