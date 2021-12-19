@@ -17,6 +17,9 @@ public class Tanque {
     
     @ManyToMany(mappedBy = "tanques")
     private Set<Hacha> hachas;
+    
+    @ManyToMany(mappedBy = "tank")
+    private Set<Troll> trolls;
 
     @ManyToOne
     @JoinColumn(name = "nombre_p")
