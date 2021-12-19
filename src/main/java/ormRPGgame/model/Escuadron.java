@@ -8,6 +8,9 @@ public class Escuadron {
     @Id
     @Column(name = "nombre_esc", nullable = false, unique = true)
     private String nombre_esc;
+    
+    @ManyToMany(mappedBy = "escuadrones")
+    private Set<Dragon> dragones;
 
     public Escuadron(String nombre_esc) {
         this.nombre_esc = nombre_esc;
