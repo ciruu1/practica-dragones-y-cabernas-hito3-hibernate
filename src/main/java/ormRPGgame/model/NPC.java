@@ -15,7 +15,7 @@ public class NPC {
     @JoinColumn(name = "codigo_po")
     private Set<Pocion> codigo_po;
 
-    @OneToMany
+    @ManyToMany
     @JoinColumn(name = "nombre_p")
     private Set<Personaje> nombre_p;
 

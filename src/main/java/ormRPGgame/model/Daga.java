@@ -15,8 +15,9 @@ public class Daga {
     @JoinColumn(name = "nombre_p")
     private Personaje nombre_p;
 
-    public Daga(String nombre_d) {
+    public Daga(String nombre_d, Personaje nombre_p) {
         this.nombre_d = nombre_d;
+        this.nombre_p = nombre_p;
     }
 
     public Daga() {

@@ -45,10 +45,10 @@ public class Controller {
      * @return el nuevo usuario creado
      * @throws SQLException
      */
-    public Daga createDaga(String nombre) throws SQLException{
+    public Daga createDaga(String nombre, Personaje personaje) throws SQLException{
         // @TODO complete este metodo para crear de forma presistente una daga
         session.beginTransaction();
-        Daga daga = new Daga(nombre);
+        Daga daga = new Daga(nombre, personaje);
         session.save(daga);
         session.getTransaction().commit();
         return daga;
@@ -71,9 +71,9 @@ public class Controller {
         return jugador;
     }
 
-    public Personaje createPersonaje(String nombre_p, int nivel, int peso, String apariencia, int oroacumulado, Daga nombre_d, Jugador nombre_j, int vida) {
+    public Personaje createPersonaje(String nombre_p, int nivel, int peso, String apariencia, int oroacumulado, Jugador nombre_j, int vida) {
         session.beginTransaction();
-        Personaje personaje = new Personaje(nombre_p, nivel, peso, apariencia, oroacumulado, nombre_d, nombre_j, vida);
+        Personaje personaje = new Personaje(nombre_p, nivel, peso, apariencia, oroacumulado, nombre_j, vida);
         session.save(personaje);
         session.getTransaction().commit();
         return personaje;

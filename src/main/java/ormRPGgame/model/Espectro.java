@@ -20,7 +20,7 @@ public class Espectro {
     @Column(name = "recompensa", nullable = false)
     private int recompensa;
 
-    @OneToMany
+    @ManyToMany
     @JoinColumn(name = "id_m")
     private Set<Mago> id_m;
 

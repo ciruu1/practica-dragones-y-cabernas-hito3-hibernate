@@ -15,7 +15,7 @@ public class Tienda {
     @JoinColumn(name = "nombre_c")
     private Ciudad nombre_c;
 
-    @OneToMany
+    @ManyToMany
     @JoinColumn(name = "nombre_d")
     private Set<Daga> nombre_d;
 

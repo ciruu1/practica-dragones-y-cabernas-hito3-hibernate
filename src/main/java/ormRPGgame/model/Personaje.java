@@ -24,40 +24,41 @@ public class Personaje {
     private int oroacumulado;
 
     @ManyToOne
-    @JoinColumn(name = "nombre_d")
-    private Daga nombre_d;
-
-    @ManyToOne
     @JoinColumn(name = "nombre_j")
     private Jugador nombre_j;
     
     @Column(name = "vida", nullable = false)
     private int vida;
 
-    @OneToMany
+    @ManyToMany
     @JoinColumn(name = "codigo_po")
     private Set<Pocion> codigo_po;
 
-    @OneToMany
+    @ManyToMany
     @JoinColumn(name = "nombre_npc")
     private Set<NPC> nombre_npc;
 
-    public Personaje(String nombre_p, int nivel, int peso, String apariencia, int oroacumulado, Daga nombre_d, Jugador nombre_j, int vida) {
+    @ManyToMany
+    @JoinColumn(name = "nombre_d")
+    private Set<Daga> nombre_d;
+
+    public Personaje(String nombre_p, int nivel, int peso, String apariencia, int oroacumulado, Jugador nombre_j, int vida) {
         this.nombre_p = nombre_p;
         this.nivel = nivel;
         this.peso = peso;
         this.apariencia = apariencia;
         this.oroacumulado = oroacumulado;
-        this.nombre_d = nombre_d;
         this.nombre_j = nombre_j;
         this.vida = vida;
         nombre_npc = new HashSet<>();
         codigo_po = new HashSet<>();
+        nombre_d = new HashSet<>();
     }
 
     public Personaje() {
         nombre_npc = new HashSet<>();
         codigo_po = new HashSet<>();
+        nombre_d = new HashSet<>();
     }
 
     public String getNombre_p() {
@@ -80,7 +81,7 @@ public class Personaje {
         return oroacumulado;
     }
 
-    public Daga getNombre_d() {
+    public Set<Daga> getNombre_d() {
         return nombre_d;
     }
 
@@ -112,8 +113,8 @@ public class Personaje {
         this.oroacumulado = oroacumulado;
     }
 
-    public void setNombre_d(Daga nombre_d) {
-        this.nombre_d = nombre_d;
+    public void addNombre_d(Daga nombre_d) {
+        this.nombre_d.add(nombre_d);
     }
 
     public void setNombre_j(Jugador nombre_j) {
