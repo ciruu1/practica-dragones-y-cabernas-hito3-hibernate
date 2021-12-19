@@ -14,6 +14,10 @@ public class Espada {
     
     @Column(name = "daño", nullable = false)
     private int damage; // Daño
+    
+    @ManyToMany()
+    @JoinTable(name = "tiene_espada")
+    private Set<Espada> espadas;
 
     public Espada(String nombre_e, int peso, int damage) {
         this.nombre_e = nombre_e;
