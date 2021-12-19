@@ -28,7 +28,7 @@ public class Personaje {
 
     @ManyToOne
     @JoinColumn(name = "nombre_j")
-    private Jugador nombre_j;
+    private Jugador jugador;
     
     @Column(name = "vida", nullable = false)
     private int vida;
