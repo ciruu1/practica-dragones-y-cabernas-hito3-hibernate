@@ -17,7 +17,7 @@ public class Espada {
     
     @ManyToMany()
     @JoinTable(name = "tiene_espada")
-    private Set<Espada> espadas;
+    private Set<Guerrero> guerreros;
 
     public Espada(String nombre_e, int peso, int damage) {
         this.nombre_e = nombre_e;
