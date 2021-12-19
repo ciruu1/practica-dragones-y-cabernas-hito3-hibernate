@@ -36,11 +36,8 @@ public class Personaje {
     
     @Column(name = "vida", nullable = false)
     private int vida;
-    
-    @Column(name = "ultima_conexion", nullable = false)
-    private Date ultima_conexion;
 
-    public Personaje(String nombre_p, int nivel, int peso, String apariencia, int oroacumulado, Daga nombre_d, Jugador nombre_j, int vida, Date ultima_conexion) {
+    public Personaje(String nombre_p, int nivel, int peso, String apariencia, int oroacumulado, Daga nombre_d, Jugador nombre_j, int vida) {
         this.nombre_p = nombre_p;
         this.nivel = nivel;
         this.peso = peso;
@@ -49,7 +46,6 @@ public class Personaje {
         this.nombre_d = nombre_d;
         this.nombre_j = nombre_j;
         this.vida = vida;
-        this.ultima_conexion = ultima_conexion;
     }
 
     public Personaje() {
@@ -88,10 +84,6 @@ public class Personaje {
         return vida;
     }
 
-    public Date getUltima_conexion() {
-        return ultima_conexion;
-    }
-
     public void setNombre_p(String nombre_p) {
         this.nombre_p = nombre_p;
     }
@@ -122,9 +114,5 @@ public class Personaje {
 
     public void setVida(int vida) {
         this.vida = vida;
-    }
-
-    public void setUltima_conexion(Date ultima_conexion) {
-        this.ultima_conexion = ultima_conexion;
     }
 }

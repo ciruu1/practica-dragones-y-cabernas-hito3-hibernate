@@ -18,10 +18,6 @@ public class Espectro {
     
     @Column(name = "recompensa", nullable = false)
     private int recompensa;
-    
-    @ManyToMany()
-    @JoinTable(name = "DerrotaEspectro")
-    private Set<Mago> magos1;
 
     @ManyToOne
     @JoinColumn(name = "id_m")

@@ -20,15 +20,6 @@ public class Mago {
     @Column(name = "fuerza", nullable = false)
     private int fuerza;
     
-    @ManyToMany(mappedBy = "magos")
-    private Set<Baculo> baculos;
-    
-    @ManyToMany(mappedBy = "magos1")
-    private Set<Espectro> espectros;
-    
-    @ManyToMany(mappedBy = "magosh")
-    private Set<HabilidadM> habilidadmagos;
-    
     @ManyToOne
     @JoinColumn(name = "nombre_p")
     private Personaje nombre_p;

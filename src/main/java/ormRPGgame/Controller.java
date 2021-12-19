@@ -71,9 +71,9 @@ public class Controller {
         return jugador;
     }
 
-    public Personaje createPersonaje(String nombre_p, int nivel, int peso, String apariencia, int oroacumulado, Daga nombre_d, Jugador nombre_j, int vida, Date ultima_conexion) {
+    public Personaje createPersonaje(String nombre_p, int nivel, int peso, String apariencia, int oroacumulado, Daga nombre_d, Jugador nombre_j, int vida) {
         session.beginTransaction();
-        Personaje personaje = new Personaje(nombre_p, nivel, peso, apariencia, oroacumulado, nombre_d, nombre_j, vida, ultima_conexion);
+        Personaje personaje = new Personaje(nombre_p, nivel, peso, apariencia, oroacumulado, nombre_d, nombre_j, vida);
         session.save(personaje);
         session.getTransaction().commit();
         return personaje;

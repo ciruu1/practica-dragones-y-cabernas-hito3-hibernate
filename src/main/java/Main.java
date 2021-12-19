@@ -16,7 +16,7 @@ public class Main {
             //para la creación de la daga y el mago.
             Daga daga = controlador.createDaga("Daga de madera");
             Jugador jugador = controlador.createJugador("Admin");
-            Personaje personaje = controlador.createPersonaje("Stanto", 10, 80, "Alto", 1000, daga, jugador, 200, new Date(1211, 11, 21));
+            Personaje personaje = controlador.createPersonaje("Stanto", 10, 80, "Alto", 1000, daga, jugador, 200);
             Mago mago = controlador.createMago(5, 600, 100, personaje);
             if (daga != null && mago != null && jugador != null && personaje != null)
                 System.out.println("Se ha creado el mago " + mago.getNombre_p() + " de nivel 1 con la daga " + daga.getNombre_d());

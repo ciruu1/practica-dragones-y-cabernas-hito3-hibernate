@@ -11,7 +11,7 @@ public class Daga {
     @Column(name = "nombre_d", nullable = false, unique = true)
     private String nombre_d;
 
-    @OneToOne(targetEntity = Cambiar.class)
+    @OneToOne
     @JoinColumn(name = "nombre_p")
     private Personaje nombre_p;
 

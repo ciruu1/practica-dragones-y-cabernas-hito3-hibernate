@@ -14,10 +14,6 @@ public class Hacha {
     
     @Column(name = "daño", nullable = false)
     private int damage; // Daño
-    
-    @ManyToMany()
-    @JoinTable(name = "tiene_hacha")
-    private Set<Tanque> tanques;
 
     public Hacha(String nombre_h, int peso, int damage) {
         this.nombre_h = nombre_h;
