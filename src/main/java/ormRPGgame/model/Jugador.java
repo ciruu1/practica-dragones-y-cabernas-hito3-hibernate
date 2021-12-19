@@ -8,6 +8,9 @@ public class Jugador {
     @Id
     @Column(name = "nombre_j", nullable = false)
     private String nombre_j;
+    
+    @OneToMany(mappedBy = "jugador")
+    private Set<Personaje> personajes;
 
     public Jugador(String nombre_j) {
         this.nombre_j = nombre_j;
