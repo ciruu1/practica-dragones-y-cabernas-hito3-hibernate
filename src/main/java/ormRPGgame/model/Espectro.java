@@ -17,6 +17,10 @@ public class Espectro {
     
     @Column(name = "recompensa", nullable = false)
     private int recompensa;
+    
+    @ManyToMany()
+    @JoinTable(name = "derrota_esp")
+    private Set<Mago> magos1;
 
     public Espectro(int codigo_e, String nombre, int vida, int recompensa) {
         this.codigo_e = codigo_e;
