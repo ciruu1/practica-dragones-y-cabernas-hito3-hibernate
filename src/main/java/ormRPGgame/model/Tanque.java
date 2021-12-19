@@ -21,19 +21,19 @@ public class Tanque {
     @JoinColumn(name = "nombre_p")
     private Personaje nombre_p;
 
-    @OneToMany
+    @ManyToMany
     @JoinColumn(name = "codigo_t")
     private Set<Troll> codigo_t;
 
-    @OneToMany
+    @ManyToMany
     @JoinColumn(name = "nombre_ht")
     private Set<HabilidadTanque> nombre_ht;
 
-    @OneToMany
+    @ManyToMany
     @JoinColumn(name = "nombre_h")
     private Set<Hacha> nombre_h;
 
-    @OneToMany
+    @ManyToMany
     @JoinColumn(name = "nombre_esc")
     private Set<Escuadron> nombre_esc;
 

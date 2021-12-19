@@ -20,7 +20,7 @@ public class Goblin {
     @Column(name = "recompensa", nullable = false)
     private int recompensa;
 
-    @OneToMany
+    @ManyToMany
     @JoinColumn(name = "id_g")
     private Set<Guerrero> id_g;
 

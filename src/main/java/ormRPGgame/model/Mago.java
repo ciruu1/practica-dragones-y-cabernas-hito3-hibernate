@@ -24,19 +24,19 @@ public class Mago {
     @JoinColumn(name = "nombre_p")
     private Personaje nombre_p;
 
-    @OneToMany
+    @ManyToMany
     @JoinColumn(name = "codigo_e")
     private Set<Espectro> codigo_e;
 
-    @OneToMany
+    @ManyToMany
     @JoinColumn(name = "nombre_hm")
     private Set<HabilidadMago> nombre_hm;
 
-    @OneToMany
+    @ManyToMany
     @JoinColumn(name = "nombre_b")
     private Set<Baculo> nombre_b;
 
-    @OneToMany
+    @ManyToMany
     @JoinColumn(name = "nombre_esc")
     private Set<Escuadron> nombre_esc;
 

@@ -17,7 +17,7 @@ public class Dragon {
     @Column(name = "recompensa", nullable = false)
     private int recompensa;
 
-    @OneToMany
+    @ManyToMany
     @JoinColumn(name = "nombre_esc")
     private Set<Escuadron> nombre_esc;
 

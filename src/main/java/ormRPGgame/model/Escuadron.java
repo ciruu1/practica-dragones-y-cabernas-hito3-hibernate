@@ -11,7 +11,7 @@ public class Escuadron {
     @Column(name = "nombre_esc", nullable = false, unique = true)
     private String nombre_esc;
 
-    @OneToMany
+    @ManyToMany
     @JoinColumn(name = "nombre_dr")
     private Set<Dragon> nombre_dr;
 

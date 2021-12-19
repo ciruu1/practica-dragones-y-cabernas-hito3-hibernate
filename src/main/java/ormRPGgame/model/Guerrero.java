@@ -21,19 +21,19 @@ public class Guerrero {
     @JoinColumn(name = "nombre_p")
     private Personaje nombre_p;
 
-    @OneToMany
+    @ManyToMany
     @JoinColumn(name = "nombre_e")
     private Set<Espada> nombre_e;
 
-    @OneToMany
+    @ManyToMany
     @JoinColumn(name = "codigo_g")
     private Set<Goblin> codigo_g;
 
-    @OneToMany
+    @ManyToMany
     @JoinColumn(name = "nombre_hg")
     private Set<HabilidadGuerrero> nombre_hg;
 
-    @OneToMany
+    @ManyToMany
     @JoinColumn(name = "nombre_esc")
     private Set<Escuadron> nombre_esc;
 

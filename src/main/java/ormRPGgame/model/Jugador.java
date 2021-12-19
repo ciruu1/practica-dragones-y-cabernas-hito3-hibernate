@@ -11,7 +11,7 @@ public class Jugador {
     @Column(name = "nombre_j", nullable = false)
     private String nombre_j;
 
-    @OneToMany
+    @ManyToMany
     @JoinColumn(name = "nombre_p")
     private Set<Personaje> nombre_p;
 

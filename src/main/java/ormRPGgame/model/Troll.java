@@ -20,7 +20,7 @@ public class Troll {
     @Column(name = "recompensa", nullable = false)
     private int recompensa;
 
-    @OneToMany
+    @ManyToMany
     @JoinColumn(name = "id_t")
     private Set<Tanque> id_t;
     

@@ -27,12 +27,8 @@
         <property name="hibernate.hbm2ddl.auto">update</property>
 
         <mapping class="ormRPGgame.model.Baculo"/>
-        <mapping class="ormRPGgame.model.Cambiar"/>
         <mapping class="ormRPGgame.model.Ciudad"/>
         <mapping class="ormRPGgame.model.Daga"/>
-        <mapping class="ormRPGgame.model.DerrotaEspectro"/>
-        <mapping class="ormRPGgame.model.DerrotaGoblin"/>
-        <mapping class="ormRPGgame.model.DerrotaTroll"/>
         <mapping class="ormRPGgame.model.Dragon"/>
         <mapping class="ormRPGgame.model.Escuadron"/>
         <mapping class="ormRPGgame.model.Espada"/>
@@ -45,26 +41,12 @@
         <mapping class="ormRPGgame.model.HabilidadTanque"/>
         <mapping class="ormRPGgame.model.Hacha"/>
         <mapping class="ormRPGgame.model.Jugador"/>
-        <mapping class="ormRPGgame.model.Lucha"/>
         <mapping class="ormRPGgame.model.Mago"/>
-        <mapping class="ormRPGgame.model.MejoraBaculo"/>
-        <mapping class="ormRPGgame.model.MejoraEspada"/>
-        <mapping class="ormRPGgame.model.MejoraHacha"/>
         <mapping class="ormRPGgame.model.NPC"/>
         <mapping class="ormRPGgame.model.Personaje"/>
-        <mapping class="ormRPGgame.model.PerteneceG"/>
-        <mapping class="ormRPGgame.model.PerteneceM"/>
-        <mapping class="ormRPGgame.model.PerteneceT"/>
         <mapping class="ormRPGgame.model.Pocion"/>
-        <mapping class="ormRPGgame.model.PoseeG"/>
-        <mapping class="ormRPGgame.model.PoseeM"/>
-        <mapping class="ormRPGgame.model.PoseeT"/>
-        <mapping class="ormRPGgame.model.Regala"/>
         <mapping class="ormRPGgame.model.Tanque"/>
         <mapping class="ormRPGgame.model.Tienda"/>
-        <mapping class="ormRPGgame.model.TieneBaculo"/>
-        <mapping class="ormRPGgame.model.TieneEspada"/>
-        <mapping class="ormRPGgame.model.TieneHacha"/>
         <mapping class="ormRPGgame.model.Troll"/>
         <!--Añada tantas clases como entidades tenga en su modelo-->
         <!--Las clases deben crearse en el paquete "model"-->

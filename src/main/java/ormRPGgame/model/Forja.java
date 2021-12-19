@@ -18,15 +18,15 @@ public class Forja {
     @JoinColumn(name = "nombre_c")
     private Ciudad nombre_c;
 
-    @OneToMany
+    @ManyToMany
     @JoinColumn(name = "nombre_e")
     private Set<Espada> nombre_e;
 
-    @OneToMany
+    @ManyToMany
     @JoinColumn(name = "nombre_b")
     private Set<Baculo> nombre_b;
 
-    @OneToMany
+    @ManyToMany
     @JoinColumn(name = "nombre_h")
     private Set<Hacha> nombre_h;
 

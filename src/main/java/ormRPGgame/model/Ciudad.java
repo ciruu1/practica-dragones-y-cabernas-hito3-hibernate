@@ -11,11 +11,11 @@ public class Ciudad {
     @Column(name = "nombre_c", nullable = false, unique = true)
     private String nombre_c;
 
-    @OneToMany
+    @ManyToMany
     @JoinColumn(name = "nombre_f")
     private Set<Forja> nombre_f;
 
-    @OneToMany
+    @ManyToMany
     @JoinColumn(name = "nombre_t")
     private Set<Tienda> nombre_t;
 
