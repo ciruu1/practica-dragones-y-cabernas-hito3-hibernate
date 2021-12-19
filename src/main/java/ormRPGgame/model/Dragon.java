@@ -18,6 +18,10 @@ public class Dragon {
     @Column(name = "desbloquea_dr", nullable = false)
     private String desbloquea_dr;
     
+    @ManyToMany()
+    @JoinTable(name = "lucha")
+    private Set<Escuadron> escuadrones;
+    
 
     public Dragon(String nombre_dr, int vida, int recompensa, String desbloquea_dr) {
         this.nombre_dr = nombre_dr;
